@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="[%-level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
+        </Console>
+        <SMTP name="mail" subject="Error Log" to="ivan.stefaniuk.kn.2021@lpnu.ua" from="ivan.stefanyuk250@ukr.net"
+              smtpHost="smtp.ukr.net" smtpPort="465" smtpUsername="ivan.stefanyuk250@ukr.net" smtpPassword="ihNNnaREtc201kis"
+              smtpProtocol="smtps"
+              bufferSize="50">
+        </SMTP>
+        <File name="file"
+              append="true"
+              fileName="logs.log">
+            <PatternLayout
+                    pattern="[%-level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="info" additivity="false">
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="mail" level="error"/>
+        </Root>
+    </Loggers>
+</Configuration>
