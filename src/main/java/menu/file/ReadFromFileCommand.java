@@ -1,9 +1,8 @@
 package menu.file;
 
-import com.fasterxml.jackson.databind.DatabindException;
 import menu.itemMainMenu.MenuItem;
 import menu.MainMenu;
-import menu.plane.passengerPlane.PassengerPlane;
+import menu.plane.PassengerPlane;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,9 +10,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.*;
 import java.util.List;
 import java.util.Scanner;
-
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
 
 public class ReadFromFileCommand implements MenuItem {
     private List<PassengerPlane> readFromFile(String filename){

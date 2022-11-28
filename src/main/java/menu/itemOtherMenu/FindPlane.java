@@ -1,11 +1,13 @@
 package menu.itemOtherMenu;
 
-import menu.plane.passengerPlane.PassengerPlane;
+import menu.plane.PassengerPlane;
 
 import java.util.List;
 import java.util.Scanner;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+
+import static menu.Input.getDouble;
 
 public class FindPlane implements FirstMenuItem{
     private static final Logger LOG = LogManager.getLogger();
@@ -20,19 +22,17 @@ public class FindPlane implements FirstMenuItem{
 
         Scanner in = new Scanner(System.in);
         int j = 0;
-        System.out.println("Введіть діапазон споживання пального: ");
-        System.out.print("Від --> ");
-        double a = in.nextDouble();
-        System.out.print("До --> ");
-        double b = in.nextDouble();
-        System.out.println("№\t\tНазва");
-        for (int i =0;i < planes.size();i++){
-            if (planes.get(i).getFuelConsumption() >= a && planes.get(i).getFuelConsumption() <= b){
-                System.out.println(j+1 + "\t\t" + planes.get(i).getName());
+        System.out.print("Введіть діапазон споживання пального: \n");
+        System.out.print("Від --> "); double a = getDouble();
+        System.out.print("До --> "); double b = getDouble();
+        System.out.println("№\t\tНазва\n");
+
+        for(PassengerPlane plane : planes){
+            if (plane.getFuelConsumption() >= a && plane.getFuelConsumption() <= b){
+                System.out.println(j+1 + "\t\t" + plane.getName());
                 j++;
             }
         }
-
 
     }
     @Override

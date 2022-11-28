@@ -1,7 +1,7 @@
 package menu.itemMainMenu;
 
 import menu.itemOtherMenu.FirstMenu;
-import menu.plane.passengerPlane.PassengerPlane;
+import menu.plane.PassengerPlane;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 

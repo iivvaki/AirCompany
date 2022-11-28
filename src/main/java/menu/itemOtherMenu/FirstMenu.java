@@ -2,7 +2,7 @@ package menu.itemOtherMenu;
 
 import menu.backMenu.BackMainMenu;
 import menu.plane.DeletePlane;
-import menu.plane.passengerPlane.PassengerPlane;
+import menu.plane.PassengerPlane;
 import menu.itemOtherMenu.sortList.SortList;
 
 import java.util.LinkedHashMap;

@@ -1,38 +1,48 @@
 package menu.plane;
 
+import menu.database.CargoPlaneData;
+import menu.database.PassengerPlaneData;
+import menu.database.RacePlaneData;
 import menu.itemOtherMenu.FirstMenuItem;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
-import menu.plane.passengerPlane.PassengerPlane;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
+import static menu.Input.getInt;
+import static menu.Input.getInt0_Limit;
+
 public class DeletePlane implements FirstMenuItem {
     private static final Logger LOG = LogManager.getLogger();
+    private PassengerPlaneData passengerPlaneData = new PassengerPlaneData();
+    private RacePlaneData racePlaneData = new RacePlaneData();
+    private CargoPlaneData cargoPlaneData = new CargoPlaneData();
     public void deletePlane(List<PassengerPlane> planes){
         LOG.info("Користувач вибирає літак, щоб видалити його. Є виняток, коли список пустий");
         if(planes.size() == 0){
             System.out.println("Список пустий\nПерезапустіть програму, щоб відновити список або добавте літак самостійно...\n");
             return;
         }
-
-        Scanner in = new Scanner(System.in);
         System.out.print("Введіть номер літака, щоб його видалити --> ");
-        while (true){
-            int a = in.nextInt()-1;
-            if(a > planes.size() && a < 0){
-                System.out.print("Ви ввели неправильне число...\nПовторіть спробу --> ");
-            }else {
-                planes.remove(a);
-                System.out.println("Літак видалений!\n\n");
-                return;
-            }
+        int a = getInt0_Limit(planes.size()+1)-1;
 
+        switch (planes.get(a).getCategory()) {
+            case "Пасажирський" -> passengerPlaneData.delete(planes.get(a).getId());
+            case "Транспортний" -> cargoPlaneData.delete(planes.get(a).getId());
+            case "Спортивний" -> racePlaneData.delete(planes.get(a).getId());
+            default -> System.out.println("Такого виду літака не існує");
         }
 
-    }
+        planes.remove(a);
+        System.out.println("Літак видалений!\n\n");
+        return;
+
+
+}
+
 
 
     @Override

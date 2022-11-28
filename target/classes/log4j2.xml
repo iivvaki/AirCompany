@@ -19,7 +19,6 @@
     </Appenders>
     <Loggers>
         <Root level="info" additivity="false">
-            <!--<AppenderRef ref="console"/>-->
             <AppenderRef ref="file"/>
             <AppenderRef ref="mail" level="error"/>
         </Root>

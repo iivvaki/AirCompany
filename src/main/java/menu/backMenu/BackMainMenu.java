@@ -2,7 +2,7 @@ package menu.backMenu;
 
 import menu.itemOtherMenu.FirstMenuItem;
 import menu.MainMenu;
-import menu.plane.passengerPlane.PassengerPlane;
+import menu.plane.PassengerPlane;
 
 import java.util.List;
 import java.util.Scanner;

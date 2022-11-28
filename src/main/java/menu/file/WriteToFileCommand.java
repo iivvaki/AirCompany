@@ -1,7 +1,7 @@
 package menu.file;
 
 import menu.itemMainMenu.MenuItem;
-import menu.plane.passengerPlane.PassengerPlane;
+import menu.plane.PassengerPlane;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;

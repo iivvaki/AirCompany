@@ -3,49 +3,65 @@ package menu.itemOtherMenu;
 import java.util.List;
 import java.util.Scanner;
 
-import menu.plane.cargoPlane.CreateCargoPlane;
-import menu.plane.passengerPlane.CreatePassengerPlane;
-import menu.plane.passengerPlane.PassengerPlane;
-import menu.plane.racePlane.CreateRacePlane;
+import menu.database.CargoPlaneData;
+import menu.database.PassengerPlaneData;
+import menu.database.RacePlaneData;
+import menu.plane.CargoPlane;
+import menu.plane.CreatePlane;
+import menu.plane.PassengerPlane;
+import menu.plane.RacePlane;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
+import static menu.Input.getInt;
+import static menu.Input.getInt0_Limit;
+
 public class CreatePlaneCommand implements FirstMenuItem {
-    private CreatePassengerPlane passengerPlane = new CreatePassengerPlane();
-    private CreateCargoPlane cargoPlane = new CreateCargoPlane();
-    private CreateRacePlane racePlane = new CreateRacePlane();
+    private final CreatePlane createPlane = new CreatePlane();
+    private final PassengerPlaneData passengerPlaneData = new PassengerPlaneData();
+    private final CargoPlaneData cargoPlaneData = new CargoPlaneData();
+    private final RacePlaneData racePlaneData = new RacePlaneData();
     private static final Logger LOG = LogManager.getLogger();
+
     public void chooseTypePlane(List<PassengerPlane> planes){
-
-
         System.out.print("""
                 1.Пасажирський
                 2.Транспортний
                 3.Спортивний
                 
                 Виберіть категорію -->\t""");
-        Scanner in = new Scanner(System.in);
-        while (true){
-            int a = in.nextInt();
-            if (a == 1){
-                LOG.info("Створення пасажирського літака");
-                planes.add(passengerPlane.createNewPlane());
-                System.out.println("Літак добавлений у список");
-                return;
-            } else if (a == 2) {
-                LOG.info("Створення транспортного літака");
-                planes.add(cargoPlane.createNewPlane());
-                System.out.println("Літак добавлений у список");
-                return;
-            } else if (a == 3) {
-                LOG.info("Створення спортивного літака");
-                planes.add(racePlane.createRacePlane());
-                System.out.println("Літак добавлений у список");
-                return;
-            }else {
-                System.out.print("Такої категорії не існує...\nПовторіть спробу --> ");
+            int a = getInt0_Limit(4);
+
+            switch (a){
+                case 1 -> {
+                    LOG.info("Створення пасажирського літака");
+                    PassengerPlane passengerPlane = CreatePlane.createPassengerPlane();
+
+                    planes.add(passengerPlane);
+                    passengerPlaneData.addPlane(passengerPlane);
+                    System.out.println("Літак добавлений у список");
+                    return;
+                }
+                case 2 -> {
+                    LOG.info("Створення транспортного літака");
+                    CargoPlane cargoPlane = CreatePlane.createCargoPlane();
+                    cargoPlaneData.addPlane(cargoPlane);
+                    planes.add(cargoPlane);
+                    System.out.println("Літак добавлений у список");
+                    return;
+                }
+                case 3 -> {
+                    LOG.info("Створення спортивного літака");
+                    RacePlane racePlane = CreatePlane.createRacePlane();
+                    racePlaneData.addPlane(racePlane);
+                    planes.add(racePlane);
+                    System.out.println("Літак добавлений у список");
+                    return;
+                }
+                default -> System.out.print("Такої категорії не існує...\nПовторіть спробу --> ");
             }
-        }
+
+
     }
 
     @Override

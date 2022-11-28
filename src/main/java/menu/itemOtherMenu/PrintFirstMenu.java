@@ -1,6 +1,6 @@
 package menu.itemOtherMenu;
 
-import menu.plane.passengerPlane.PassengerPlane;
+import menu.plane.PassengerPlane;
 
 import java.util.List;
 

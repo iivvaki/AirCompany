@@ -3,7 +3,7 @@ package menu;
 import menu.file.ReadFromFileCommand;
 import menu.file.WriteToFileCommand;
 import menu.itemMainMenu.*;
-import menu.plane.passengerPlane.PassengerPlane;
+import menu.plane.PassengerPlane;
 
 
 import java.util.LinkedHashMap;

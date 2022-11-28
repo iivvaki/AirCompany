@@ -2,7 +2,7 @@ package menu.itemOtherMenu.sortList;
 
 import menu.itemOtherMenu.FirstMenuItem;
 import menu.itemMainMenu.PrintListOfPlane;
-import menu.plane.passengerPlane.PassengerPlane;
+import menu.plane.PassengerPlane;
 
 import java.util.*;
 import org.apache.logging.log4j.Logger;
@@ -45,6 +45,7 @@ public class SortList implements FirstMenuItem {
         PlaneSorting a = chooseSortType(planes);
 
         List<PassengerPlane> sortedPlane = new ArrayList<>(planes);
+
         if(a == PlaneSorting.ASC){
             LOG.info("Сортування за зростанням");
             sortedPlane.sort(new SortingComparatorAsc());
