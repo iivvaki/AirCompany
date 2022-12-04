@@ -26,7 +26,7 @@ public class PassengerPlaneData implements DAO<PassengerPlane>{
             while (res.next()){
                 plane.setName(res.getString("name"));
                 plane.setCategory(res.getString("category"));
-                plane.setCountEngines(res.getInt("countOfPassengers"));
+                plane.setCountOfPassengers(res.getInt("countOfPassengers"));
                 plane.setGeneralLength(res.getFloat("length"));
                 plane.setWeight(res.getFloat("weight"));
                 plane.setHeight(res.getFloat("height"));
@@ -142,7 +142,7 @@ public class PassengerPlaneData implements DAO<PassengerPlane>{
             LOG.info("Літак {} додано до бази даних((");
             return true;
         } catch (SQLException e) {
-            System.out.println("sql error (delete): "+ e.getMessage());
+            System.out.println("sql error (addPlane): "+ e.getMessage());
             LOG.error("Проблеми з базою даних {}", e.getMessage());
         }
 
@@ -150,20 +150,7 @@ public class PassengerPlaneData implements DAO<PassengerPlane>{
         return false;
     }
 
-    @Override
-    public boolean insert(PassengerPlane passengerPlane) {
-        return false;
-    }
 
-    @Override
-    public int getID(PassengerPlane passengerPlane) {
-        return 0;
-    }
-
-    @Override
-    public boolean isExist(PassengerPlane passengerPlane) {
-        return false;
-    }
 
 
 

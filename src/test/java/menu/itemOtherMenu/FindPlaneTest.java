@@ -31,7 +31,7 @@ class FindPlaneTest {
         planes = new ArrayList<>();
         findPlane = new FindPlane();
         String text = tapSystemOut(() -> {
-            findPlane.findPlane(planes);
+            findPlane.findPlane(planes, 0, 10);
         });
 
         assertEquals("Список пустий, ви не можете користуватися цією функцією...\nДля відновлення списку, перезапустіть програму або заповність список замостійно за допомогою функції <Добавити літак у список>", text.trim());
@@ -62,7 +62,7 @@ class FindPlaneTest {
              input.when(Input::getDouble).thenReturn(10);
 
             String text = tapSystemOut(() -> {
-                findPlane.findPlane(planes);
+                findPlane.findPlane(planes, 0 ,10);
             });
 
             assertEquals("Введіть діапазон споживання пального: \nВід --> До --> №\t\tНазва", text.trim());

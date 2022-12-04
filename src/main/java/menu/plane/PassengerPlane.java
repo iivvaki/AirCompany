@@ -1,6 +1,9 @@
 package menu.plane;
 
-public class PassengerPlane {
+import java.util.ArrayList;
+import java.util.List;
+
+public class PassengerPlane extends ManipulationPlane {
     private String category;
     private String name;
     private int countOfPassengers;       //к-ть пасажирів
@@ -197,6 +200,8 @@ public class PassengerPlane {
         this.fuelConsumption = fuelConsumption;
     }
 
+
+
     @Override
     public String toString(){
         return  "Назва: " + name+
@@ -222,7 +227,6 @@ public class PassengerPlane {
                 "\nОб'єм вантажного відсіку(м^3): " + cargoVolume+
                 "\nРобоча стеля(м): "+workingCeiling+
                 "\n\nНазва двигуна: "+nameEngine+
-                "\nК-ть двигунів: "+countEngines+
-                "\n--------------------------------------------------";
+                "\nК-ть двигунів: "+countEngines;
     }
 }

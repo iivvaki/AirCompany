@@ -1,21 +1,23 @@
-import menu.MainMenu;
-import menu.plane.ListOfPlane;
-import menu.plane.PassengerPlane;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import java.util.List;
-import java.util.Scanner;
+import java.util.Objects;
 
-public class Main {
-    static ListOfPlane listOfPlane = new ListOfPlane();
-    static List<PassengerPlane> planes = listOfPlane.choosePlane();
-    public static void main(String[] args) {
-        MainMenu mainMenu = new MainMenu(planes);
-        Scanner in = new Scanner(System.in);
-        while (true){
+public class Main  extends Application{
+    public static void main(String[] args) {launch(args);}
 
-            mainMenu.printAvailableCommands(planes);
-            int a = in.nextInt();
-            mainMenu.execute(a, planes);
+    @Override
+    public void start(Stage stage) {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("scene1.fxml")));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

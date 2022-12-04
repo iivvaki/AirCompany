@@ -1,0 +1,27 @@
+.root{
+    -fx-background-color: white;
+}
+
+.button{
+    fx-cursor: hand;
+    -fx-background-color: white;
+    -fx-text-fill: #000;
+    -fx-border-radius: 10;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-background-radius: 10;
+}
+
+.button:hover{
+    -fx-background-color: black;
+    -fx-text-fill: #fff;
+}
+
+#back{
+    -fx-cursor: hand;
+    -fx-background-color: none;
+    -fx-border-color: none;
+}
+#back:hover{
+    -fx-text-fill: #942020;
+}

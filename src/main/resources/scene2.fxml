@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="606.0" prefWidth="820.0" stylesheets="scene2.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <ImageView fitHeight="580.0" fitWidth="585.0" layoutX="233.0" layoutY="26.0" opacity="0.18" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@airplane.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="651.0" fitWidth="624.0" layoutX="-364.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@GRAIN_HOLOGRAM_BG_02.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="table" layoutX="256.0" layoutY="90.0" onMouseClicked="#detailInfoAble" prefHeight="238.0" prefWidth="510.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="139.20001220703125" sortable="false" text="Назва" />
+          <TableColumn fx:id="typePlane" prefWidth="99.199951171875" sortable="false" text="Тип літака" />
+            <TableColumn fx:id="wingspan" prefWidth="138.40005493164062" sortable="false" text="Розмах крил(м)" />
+            <TableColumn fx:id="range" prefWidth="133.5999755859375" text="Дальність польоту(км)" />
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem fx:id="detailInfo" disable="true" mnemonicParsing="false" onAction="#switchToDetailInfoPlane" text="Детальна інформація" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <Label layoutX="59.0" layoutY="125.0" prefHeight="26.0" prefWidth="105.0" text="AirNevil">
+         <font>
+            <Font name="Monospaced Bold" size="21.0" />
+         </font>
+      </Label>
+      <Button fx:id="createplane" layoutX="433.0" layoutY="50.0" mnemonicParsing="false" onAction="#createPlane" prefHeight="26.0" prefWidth="106.0" text="Добавити літак" />
+      <Button fx:id="findplane" layoutX="547.0" layoutY="50.0" mnemonicParsing="false" onAction="#findPlane" prefHeight="26.0" prefWidth="106.0" text="Знайти літак" />
+      <Button fx:id="deleteplane" disable="true" layoutX="660.0" layoutY="50.0" mnemonicParsing="false" onAction="#deletePlane" prefHeight="26.0" prefWidth="106.0" text="Видалити" />
+      <Label layoutX="31.0" layoutY="455.0" text="Загальна к-ть пасажирів:">
+         <tooltip>
+            <Tooltip text="Сума пасажирських місць літаків, які знаходяться у списку">
+               <font>
+                  <Font name="Consolas Italic" size="19.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="510.0" prefHeight="22.0" prefWidth="154.0" text="Вантажопідйомність:">
+         <tooltip>
+            <Tooltip text="Сума вантажопійомності літаків, які знаходяться у списку">
+               <font>
+                  <Font name="Consolas Italic" size="19.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="96.0" fitWidth="119.0" layoutX="59.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@IMG_2445-removebg-preview1.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="LabelSetCountPas" layoutX="31.0" layoutY="480.0" text="Label">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="LabelSetCapacity" layoutX="31.0" layoutY="539.0" text="Label">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Button fx:id="addairline" layoutX="326.0" layoutY="349.0" mnemonicParsing="false" onAction="#addNewAirline" prefHeight="26.0" prefWidth="106.0" text="Добавити рейс" />
+      <TableView fx:id="airlinelist" layoutX="256.0" layoutY="390.0" onMouseClicked="#detailAirlinesAble" prefHeight="200.0" prefWidth="402.0">
+        <columns>
+          <TableColumn fx:id="planeName" prefWidth="116.79998779296875" text="Літак" />
+          <TableColumn fx:id="datecol" prefWidth="96.0" text="Дата" />
+            <TableColumn fx:id="fromcity" prefWidth="96.800048828125" text="Звідки" />
+            <TableColumn fx:id="tocity" prefWidth="90.4000244140625" text="Куди" />
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem fx:id="detailairline" mnemonicParsing="false" onAction="#showmoreinfo" text="Детальна інформація" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <Button fx:id="findairline" layoutX="440.0" layoutY="349.0" mnemonicParsing="false" onAction="#findAirline" prefHeight="26.0" prefWidth="106.0" text="Знайти рейс" />
+      <Button fx:id="deleteAirline" disable="true" layoutX="553.0" layoutY="349.0" mnemonicParsing="false" onAction="#deleteAirline" prefHeight="26.0" prefWidth="106.0" text="Видалити" />
+      <Label layoutX="256.0" layoutY="49.0" text="Літаки компанії">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="256.0" layoutY="348.0" text="Рейси">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="238.0" fitWidth="87.0" layoutX="694.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Без%20імені.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="21.0" layoutY="167.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="195.0" text="Вийти" />
+   </children>
+</AnchorPane>

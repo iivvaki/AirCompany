@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="451.0" prefWidth="630.0" stylesheets="createplane.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateAirlineController">
+   <children>
+      <Button fx:id="addnewairline" disable="true" layoutX="392.0" layoutY="366.0" mnemonicParsing="false" onAction="#buttonClickAddAirline" text="Додати" />
+      <Label layoutX="285.0" layoutY="113.0" text="Звідки" />
+      <TextField fx:id="country1" layoutX="234.0" layoutY="143.0" onAction="#inputData" promptText="Країна" />
+      <TextField fx:id="city1" disable="true" layoutX="235.0" layoutY="186.0" onAction="#inputData" promptText="Місто" />
+      <Label layoutX="508.0" layoutY="113.0" text="Куди" />
+      <TextField fx:id="country2" disable="true" layoutX="447.0" layoutY="142.0" onAction="#inputData" promptText="Країна" />
+      <TextField fx:id="city2" disable="true" layoutX="448.0" layoutY="185.0" onAction="#inputData" promptText="Місто" />
+      <TextField fx:id="coastticket" disable="true" layoutX="346.0" layoutY="278.0" onAction="#inputData" promptText="Ціна білета" />
+      <TextField fx:id="planename" disable="true" layoutX="346.0" layoutY="318.0" onAction="#inputData" promptText="Назва літака" />
+      <DatePicker fx:id="dateairline" disable="true" layoutX="345.0" layoutY="234.0" onAction="#inputData" prefHeight="26.0" prefWidth="150.0" promptText="Дата рейсу">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </DatePicker>
+      <ImageView fitHeight="482.0" fitWidth="418.0" layoutX="-209.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@GRAIN_HOLOGRAM_BG_02.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="108.0" fitWidth="130.0" layoutX="51.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@IMG_2445-removebg-preview1.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="backtomainmenu" layoutX="22.0" layoutY="209.0" mnemonicParsing="false" onAction="#backTomain" prefHeight="26.0" prefWidth="169.0" text="Назад" />
+      <Label layoutX="59.0" layoutY="149.0" text="AirNevil">
+         <font>
+            <Font name="Monospaced Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="236.0" layoutY="52.0" text="Додати рейс">
+         <font>
+            <Font name="Calibri Bold" size="31.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

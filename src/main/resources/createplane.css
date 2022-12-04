@@ -1,0 +1,40 @@
+.root{
+    -fx-background-color: white;
+
+}
+
+/*.text-field {*/
+/*    -fx-border-color: grey;*/
+/*    -fx-border-width: 0 0 1 0;*/
+/*-fx-background-color: transparent;*/
+/*}*/
+/*.text-field:focused {*/
+/*    -fx-background-color: -fx-focus-color, -fx-background ;*/
+/*}*/
+
+.button{
+    fx-cursor: hand;
+    -fx-background-color: white;
+    -fx-text-fill: #000;
+    -fx-border-radius: 10;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-background-radius: 10;
+}
+
+.button:hover{
+    -fx-background-color: black;
+    -fx-text-fill: #fff;
+}
+
+   .choice-box .context-menu { -fx-background-color: black; }
+   .choice-box .menu-item:focused { -fx-background-color: white; -fx-text-fill: black }
+   .choice-box .menu-item > .label { -fx-text-fill: white; }
+   .choice-box .menu-item:focused > .label { -fx-text-fill: black; }
+
+.choice-box {
+    -fx-background-color: black;
+    -fx-mark-color: orange; // arrow color
+}
+
+   .choice-box > .label { -fx-text-fill: white; }

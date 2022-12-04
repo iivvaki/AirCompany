@@ -28,7 +28,7 @@ public class CargoPlaneData implements DAO<CargoPlane>{
             while (res.next()){
                 plane.setName(res.getString("name"));
                 plane.setCategory(res.getString("category"));
-                plane.setCountEngines(res.getInt("countOfPassenger"));
+                plane.setCountOfPassengers(res.getInt("countOfPassenger"));
                 plane.setGeneralLength(res.getFloat("length"));
                 plane.setWeight(res.getFloat("weight"));
                 plane.setHeight(res.getFloat("height"));
@@ -108,7 +108,7 @@ public class CargoPlaneData implements DAO<CargoPlane>{
     @Override
     public boolean addPlane(CargoPlane plane) {
 
-        String query = "insert into CargoPlane(name, category, countOfPassengers,length,weight,height,winspan," +
+        String query = "insert into CargoPlane(name, category, countOfPassenger,length,weight,height,wingspan," +
                 "maxLandingWeight,maxTakeoffWeight,maxFuelVolume,cruiseSpeed,range,cargoVolume,nameEngine,countEngines," +
                 "wingArea,wingGeometryAngle,cabinWidth,maxZeroFuelMass,maxDownload,workingCeiling,maxSpeed,carryingCapacity," +
                 "rangeWithCargo ,fuelConsumption) " +
@@ -116,7 +116,7 @@ public class CargoPlaneData implements DAO<CargoPlane>{
         try {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1,plane.getName());
-            statement.setString(2,"Пасажирський");
+            statement.setString(2,"Транспортний");
             statement.setInt(3,plane.getCountOfPassengers());
             statement.setDouble(4,plane.getGeneralLength());
             statement.setDouble(5,plane.getWeight());
@@ -145,7 +145,7 @@ public class CargoPlaneData implements DAO<CargoPlane>{
             LOG.info("Літак {} додано до бази даних((");
             return true;
         } catch (SQLException e) {
-            System.out.println("sql error (delete): "+ e.getMessage());
+            System.out.println("sql error (addPlane): "+ e.getMessage());
             LOG.error("Проблеми з базою даних {}", e.getMessage());
         }
 
@@ -153,18 +153,4 @@ public class CargoPlaneData implements DAO<CargoPlane>{
         return false;
     }
 
-    @Override
-    public boolean insert(CargoPlane cargoPlane) {
-        return false;
-    }
-
-    @Override
-    public int getID(CargoPlane cargoPlane) {
-        return 0;
-    }
-
-    @Override
-    public boolean isExist(CargoPlane cargoPlane) {
-        return false;
-    }
 }

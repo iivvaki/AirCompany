@@ -24,6 +24,10 @@ public class RacePlane extends PassengerPlane {
         this.enginePower = enginePower;
     }
 
+    public RacePlane() {
+
+    }
+
     @Override
     public int getId() {
         return id;
@@ -69,16 +73,16 @@ public class RacePlane extends PassengerPlane {
 
     @Override
     public String toString(){
-        return "Name: " + getName() +
-                "\nCount of crew: " + getCountOfCrew()+
-                "\nLength: " + getGeneralLength() +
-                "\nHeight: " + getHeight() +
-                "\nWingspan: " + getWingspan() +
-                "\nEmpty mass: "+ getEmptyMass() +
-                "\n\nName engine: "+ getNameEngine()+
-                "\nPower engine: "+getEnginePower()+
-                "\n\nMax speed: " + getMaxSpeed() +
-                "\nRange: " + getRange() +
-                "\nHigh speed: " + getHighSpeed();
+        return "Назва: " + getName() +
+                "\nК-ть екіпажу: " + getCountOfCrew()+
+                "\nДовжина: " + getGeneralLength() +
+                "\nВисота: " + getHeight() +
+                "\nРозмах крил: " + getWingspan() +
+                "\nМаса пустого: "+ getEmptyMass() +
+                "\n\nНазва двигуна: "+ getNameEngine()+
+                "\nПотужність двигуна: "+getEnginePower()+
+                "\n\nМаксимальна швидкість: " + getMaxSpeed() +
+                "\nДальність: " + getRange() +
+                "\nШвидкопідйомність: " + getHighSpeed();
     }
 }

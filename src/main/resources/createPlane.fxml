@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="685.0" prefWidth="860.0" stylesheets="createplane.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreatePlaneCommandController">
+   <children>
+      <ImageView fitHeight="749.0" fitWidth="633.0" layoutX="-428.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@GRAIN_HOLOGRAM_BG_02.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="backMenu" layoutX="22.0" layoutY="206.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="26.0" prefWidth="164.0" text="Назад" />
+      <Label layoutX="269.0" layoutY="110.0" text="Виберіть вид літака" />
+      <ChoiceBox fx:id="typePlane" layoutX="269.0" layoutY="136.0" prefWidth="150.0" />
+      <TextField fx:id="name" alignment="CENTER" layoutX="270.0" layoutY="187.0" onAction="#inputData" promptText="Назва" visible="false" />
+      <TextField fx:id="countPassenger" alignment="CENTER" disable="true" layoutX="270.0" layoutY="226.0" onAction="#inputData" promptText="К-ть пасажирів" visible="false" />
+      <TextField fx:id="length" alignment="CENTER" disable="true" layoutX="270.0" layoutY="266.0" onAction="#inputData" promptText="Довжина" visible="false" />
+      <TextField fx:id="weight" alignment="CENTER" disable="true" layoutX="270.0" layoutY="305.0" onAction="#inputData" promptText="Ширина" visible="false" />
+      <TextField fx:id="height" alignment="CENTER" disable="true" layoutX="270.0" layoutY="344.0" onAction="#inputData" promptText="Висота" visible="false" />
+      <TextField fx:id="wingspan" alignment="CENTER" disable="true" layoutX="270.0" layoutY="384.0" onAction="#inputData" promptText="Розмах крил" visible="false" />
+      <TextField fx:id="maxLandingWeight" alignment="CENTER" disable="true" layoutX="271.0" layoutY="423.0" onAction="#inputData" promptText="Макс. посадкова маса" visible="false" />
+      <TextField fx:id="maxTakeoffWeight" alignment="CENTER" disable="true" layoutX="271.0" layoutY="464.0" onAction="#inputData" promptText="Макс. злітна маса" visible="false" />
+      <TextField fx:id="maxFuelVolume" alignment="CENTER" disable="true" layoutX="270.0" layoutY="503.0" onAction="#inputData" promptText="Макс. об'єм палива" visible="false" />
+      <TextField fx:id="cruiseSpeed" alignment="CENTER" disable="true" layoutX="270.0" layoutY="542.0" onAction="#inputData" promptText="Крейсерська швидкість" visible="false" />
+      <TextField fx:id="range" alignment="CENTER" disable="true" layoutX="269.0" layoutY="584.0" onAction="#inputData" promptText="Дальність" visible="false" />
+      <TextField fx:id="cargoVolume" alignment="CENTER" disable="true" layoutX="269.0" layoutY="627.0" onAction="#inputData" promptText="Об'єм вантажного відсіку" visible="false" />
+      <TextField fx:id="nameEngine" alignment="CENTER" disable="true" layoutX="464.0" layoutY="187.0" onAction="#inputData" promptText="Назва двигуна" visible="false" />
+      <TextField fx:id="countEngine" alignment="CENTER" disable="true" layoutX="464.0" layoutY="226.0" onAction="#inputData" promptText="К-ть двигунів" visible="false" />
+      <TextField fx:id="wingArea" alignment="CENTER" disable="true" layoutX="464.0" layoutY="503.0" onAction="#inputData" promptText="Площа крил" visible="false" />
+      <TextField fx:id="wingGeometryAngle" alignment="CENTER" disable="true" layoutX="464.0" layoutY="584.0" onAction="#inputData" promptText="Кут крила" visible="false" />
+      <TextField fx:id="cabinWidth" alignment="CENTER" disable="true" layoutX="464.0" layoutY="344.0" onAction="#inputData" promptText=" Ширина кабіни" visible="false" />
+      <TextField fx:id="maxZeroFuelMass" alignment="CENTER" disable="true" layoutX="464.0" layoutY="384.0" onAction="#inputData" promptText="Макс. нуль-палива маса" visible="false" />
+      <TextField fx:id="maxDownload" alignment="CENTER" disable="true" layoutX="464.0" layoutY="423.0" onAction="#inputData" promptText="Макс. завантаженість" visible="false" />
+      <TextField fx:id="workingCeiling" alignment="CENTER" disable="true" layoutX="464.0" layoutY="464.0" onAction="#inputData" promptText="Практична стеля" visible="false" />
+      <TextField fx:id="maxSpeed" alignment="CENTER" disable="true" layoutX="464.0" layoutY="266.0" onAction="#inputData" promptText="Макс. швидкість" visible="false" />
+      <TextField fx:id="carryingCapacity" alignment="CENTER" disable="true" layoutX="464.0" layoutY="542.0" onAction="#inputData" promptText="Вантажопідйомність" visible="false" />
+      <TextField fx:id="fuelConsumption" alignment="CENTER" disable="true" layoutX="464.0" layoutY="305.0" onAction="#inputData" promptText="Витрати пального" visible="false" />
+      <TextField fx:id="rangeWithCargo" alignment="CENTER" disable="true" layoutX="464.0" layoutY="627.0" onAction="#inputData" promptText="Дальність з багажем" visible="false" />
+      <TextField fx:id="countOfCrew" alignment="CENTER" disable="true" layoutX="271.0" layoutY="423.0" onAction="#inputData" promptText="К-ть екіпажу(не більше 2)" visible="false" />
+      <TextField fx:id="emptyMass" alignment="CENTER" disable="true" layoutX="271.0" layoutY="464.0" onAction="#inputData" promptText="Маса пустого" visible="false" />
+      <TextField fx:id="enginePower" alignment="CENTER" disable="true" layoutX="271.0" layoutY="503.0" onAction="#inputData" promptText="Потужність двигуна" visible="false" />
+      <TextField fx:id="highSpeed" alignment="CENTER" disable="true" layoutX="271.0" layoutY="542.0" onAction="#inputData" promptText="Швидкопідйомність" visible="false" />
+      <Button fx:id="create" disable="true" layoutX="464.0" layoutY="136.0" mnemonicParsing="false" onAction="#buttonClickCreatePlane" text="Створити" />
+      <Label layoutX="53.0" layoutY="135.0" prefHeight="26.0" prefWidth="105.0" text="AirNevil">
+         <font>
+            <Font name="Monospaced Bold" size="21.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="96.0" fitWidth="119.0" layoutX="53.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@IMG_2445-removebg-preview1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="269.0" layoutY="51.0" text="Додати літак у список">
+         <font>
+            <Font name="Calibri Bold" size="31.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

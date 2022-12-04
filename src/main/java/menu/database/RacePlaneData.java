@@ -27,7 +27,7 @@ public class RacePlaneData implements DAO<RacePlane>{
             while (res.next()){
                 plane.setName(res.getString("name"));
                 plane.setCategory(res.getString("category"));
-                plane.setCountEngines(res.getInt("countOfPassenger"));
+                plane.setCountOfPassengers(res.getInt("countOfPassenger"));
                 plane.setGeneralLength(res.getFloat("length"));
                 plane.setWeight(res.getFloat("weight"));
                 plane.setHeight(res.getFloat("height"));
@@ -108,15 +108,15 @@ public class RacePlaneData implements DAO<RacePlane>{
 
     @Override
     public boolean addPlane(RacePlane plane) {
-        String query = "insert into RacePlane(name, category, countOfPassengers,length,weight,height,winspan," +
+        String query = "insert into RacePlane(name, category, countOfPassenger,length,weight,height,wingspan," +
                 "maxLandingWeight,maxTakeoffWeight,maxFuelVolume,cruiseSpeed,range,cargoVolume,nameEngine,countEngines," +
-                "wingArea,wingGeometryAngle,cabinWidth,maxZeroFuelMass,maxDownload,workingCeiling,maxSpeed,countOfCrew" +
+                "wingArea,wingGeometryAngle,cabinWidth,maxZeroFuelMass,maxDownload,workingCeiling,maxSpeed,countOfCrew," +
                 "emptyMass, highSpeed, enginePower,carryingCapacity,fuelConsumption) " +
                 "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1,plane.getName());
-            statement.setString(2,"Пасажирський");
+            statement.setString(2,"Спортивний");
             statement.setInt(3,plane.getCountOfPassengers());
             statement.setDouble(4,plane.getGeneralLength());
             statement.setDouble(5,plane.getWeight());
@@ -145,10 +145,10 @@ public class RacePlaneData implements DAO<RacePlane>{
             statement.setDouble(28,plane.getFuelConsumption());
             statement.executeUpdate();
             System.out.println("ЛІТАК ДОДАНО ДО БАЗИ ДАНИХ!");
-            LOG.info("Літак {} додано до бази даних((");
+            LOG.info("Літак додано до бази даних))");
             return true;
         } catch (SQLException e) {
-            System.out.println("sql error (delete): "+ e.getMessage());
+            System.out.println("sql error (addPlane): "+ e.getMessage());
             LOG.error("Проблеми з базою даних {}", e.getMessage());
         }
 
@@ -156,18 +156,5 @@ public class RacePlaneData implements DAO<RacePlane>{
         return false;
     }
 
-    @Override
-    public boolean insert(RacePlane racePlane) {
-        return false;
-    }
 
-    @Override
-    public int getID(RacePlane racePlane) {
-        return 0;
-    }
-
-    @Override
-    public boolean isExist(RacePlane racePlane) {
-        return false;
-    }
 }

@@ -18,6 +18,10 @@ public class CargoPlane extends PassengerPlane {
         this.rangeWithCargo = rangeWithCargo;
     }
 
+    public CargoPlane() {
+
+    }
+
     public int getRangeWithCargo() {
         return rangeWithCargo;
     }
@@ -61,8 +65,7 @@ public class CargoPlane extends PassengerPlane {
                 "\nОб'єм вантажного відділення(м^3): " + getCargoVolume()+
                 "\nРобоча стеля(м): "+getWorkingCeiling()+
                 "\n\nНазва двигуна: "+getNameEngine()+
-                "\nК-ть двигунів: "+getCountEngines()+
-                "\n--------------------------------------------------";
+                "\nК-ть двигунів: "+getCountEngines();
     }
 }
 

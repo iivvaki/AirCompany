@@ -13,12 +13,7 @@ public interface DAO<T> {
 
         boolean addPlane(T t);
 
-        boolean insert(T t);
 
-        int getID(T t);
-
-
-        boolean isExist(T t);
 
     }
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="findPlane.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FindAirlinesController">
+    <children>
+      <ImageView fitHeight="482.0" fitWidth="418.0" layoutX="-224.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@GRAIN_HOLOGRAM_BG_02.png" />
+         </image>
+      </ImageView>
+        <ImageView fitHeight="108.0" fitWidth="130.0" layoutX="42.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@IMG_2445-removebg-preview1.png" />
+            </image>
+        </ImageView>
+<!--        <Button fx:id="backtomainmenu" layoutX="62.0" layoutY="200.0" mnemonicParsing="false" onAction="#backTomain" text="Назад" />-->
+        <Label layoutX="50.0" layoutY="140.0" text="AirNevil">
+            <font>
+                <Font name="Monospaced Bold" size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="city1rg" alignment="CENTER" layoutX="223.0" layoutY="174.0" prefHeight="26.0" prefWidth="150.0" promptText="Звідки" visible="false" />
+        <TextField fx:id="city2rg" alignment="CENTER" layoutX="382.0" layoutY="174.0" prefHeight="26.0" prefWidth="150.0" promptText="Куди" visible="false" />
+      <Button layoutX="16.0" layoutY="200.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="161.0" text="Назад" />
+      <Button layoutX="382.0" layoutY="139.0" mnemonicParsing="false" onAction="#findAirline" text="Знайти" />
+      <ChoiceBox fx:id="typeFind" layoutX="221.0" layoutY="139.0" prefWidth="150.0" />
+      <TextField fx:id="daterg" alignment="CENTER" layoutX="221.0" layoutY="174.0" promptText="Дата рейсу" visible="false" />
+      <TableView fx:id="table" layoutX="223.0" layoutY="213.0" prefHeight="200.0" prefWidth="308.0">
+        <columns>
+          <TableColumn fx:id="plane" prefWidth="75.0" text="Літак" />
+          <TableColumn fx:id="datacol" prefWidth="75.0" text="Дата" />
+            <TableColumn fx:id="fromcity" prefWidth="75.0" text="Звідки" />
+            <TableColumn fx:id="tocity" prefWidth="75.0" text="Куди" />
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem fx:id="detailbtn" mnemonicParsing="false" onAction="#detailinfo" text="Детальна інфорація" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <Label layoutX="220.0" layoutY="50.0" text="Пошук рейсів">
+         <font>
+            <Font name="Calibri Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="220.0" layoutY="108.0" text="Виберіть вид знаходження">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbR" layoutX="375.0" layoutY="178.0" text="рррр-мм-дд" visible="false" />
+    </children>
+</AnchorPane>
